@@ -24,7 +24,7 @@ public class Activations : MonoBehaviour {
                 if (fanControl)
                 {
                     fanControl.activateFan = true;
-                    Debug.Log(fanControl.gameObject.name);
+                    //Debug.Log(fanControl.gameObject.name);
                 }
                 
             }
