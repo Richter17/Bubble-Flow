@@ -5,7 +5,9 @@ using UnityEngine;
 public class FanControl : MonoBehaviour {
 
     public float fanForce;
+    public bool activateFan;
     Rigidbody bubbleRigid;
+    Camera cam;
     
 	// Use this for initialization
 	void Start () {
@@ -14,11 +16,13 @@ public class FanControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButton(0))
+
+		if(activateFan)
         {
             if(bubbleRigid)
             {
-                bubbleRigid.AddForce()
+                Debug.Log("push bubble");
+                bubbleRigid.AddForce((bubbleRigid.transform.position - transform.position).normalized * fanForce*Time.deltaTime);
             }
         }
 	}
