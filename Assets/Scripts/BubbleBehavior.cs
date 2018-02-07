@@ -34,5 +34,6 @@ public class BubbleBehavior : MonoBehaviour {
     {
         Debug.Log("Pop! you lose");
         transform.position = startPos;
+        rigid.velocity = Vector3.zero;
     }
 }
