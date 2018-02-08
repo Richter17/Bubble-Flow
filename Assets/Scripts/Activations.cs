@@ -13,7 +13,7 @@ public class Activations : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
             RaycastHit hit = new RaycastHit();
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -31,6 +31,7 @@ public class Activations : MonoBehaviour {
         }
         else if(Input.GetMouseButtonUp(0))
         {
+            if (fanControl == null) return;
             fanControl.activateFan = false;
         }
         

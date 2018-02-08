@@ -32,8 +32,11 @@ public class FanControl : MonoBehaviour {
         {
             if(wind.isPlaying)
                 wind.Stop();
+            
         }
-	}
+        
+
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -48,5 +51,11 @@ public class FanControl : MonoBehaviour {
         {
             bubbleRigid = null;
         }
+    }
+
+    IEnumerator StopWindAfterASecond()
+    {
+        yield return new WaitForSeconds(1);
+        wind.Stop();
     }
 }
