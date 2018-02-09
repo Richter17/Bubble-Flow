@@ -33,6 +33,7 @@ public class BubbleBehavior : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Pop! you lose");
+        LevelManager.manager.Lose();
         transform.position = startPos;
         rigid.velocity = Vector3.zero;
     }

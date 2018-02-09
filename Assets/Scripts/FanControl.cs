@@ -6,7 +6,7 @@ public class FanControl : MonoBehaviour {
 
     public float fanForce;
     public bool activateFan;
-    Rigidbody bubbleRigid;
+    public Rigidbody bubbleRigid;
     ParticleSystem wind;
     Camera cam;
     
@@ -34,24 +34,24 @@ public class FanControl : MonoBehaviour {
                 wind.Stop();
             
         }
-        
+        //Debug.Log(bubbleRigid);
 
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.GetComponent<Rigidbody>())
-        {
-            bubbleRigid = other.gameObject.GetComponent<Rigidbody>();
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.GetComponent<Rigidbody>())
-        {
-            bubbleRigid = null;
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.GetComponent<Rigidbody>())
+    //    {
+    //        bubbleRigid = other.gameObject.GetComponent<Rigidbody>();
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.GetComponent<Rigidbody>())
+    //    {
+    //        bubbleRigid = null;
+    //    }
+    //}
 
     IEnumerator StopWindAfterASecond()
     {
