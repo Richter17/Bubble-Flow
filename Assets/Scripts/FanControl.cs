@@ -3,16 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FanControl : MonoBehaviour {
-
+    //public Vector3 gismoPos, gismoWirePos;
     public float fanForce;
     public bool activateFan;
     public Rigidbody bubbleRigid;
+    BoxCollider box;
     ParticleSystem wind;
     Camera cam;
-    
-	// Use this for initialization
-	void Start () {
+
+    private void OnDrawGizmos()
+    {
+        box = GetComponentInChildren<FanArea>().GetComponent<BoxCollider>();
+        Matrix4x4 effectArea = Matrix4x4.TRS(transform.position, transform.rotation, box.size);
+        Gizmos.matrix = effectArea;
+
+        Gizmos.DrawWireCube(new Vector3(0,(box.center.y/box.size.y)), transform.localScale);
+    }
+
+    // Use this for initialization
+    void Start () {
+        box = GetComponentInChildren<FanArea>().GetComponent<BoxCollider>();
         wind = GetComponentInChildren<ParticleSystem>();
+        var windMain = wind.main;
+        windMain.startSpeed = new ParticleSystem.MinMaxCurve(5f, box.center.y*box.size.y);
 	}
 	
 	// Update is called once per frame
@@ -58,4 +71,6 @@ public class FanControl : MonoBehaviour {
         yield return new WaitForSeconds(1);
         wind.Stop();
     }
+
+    
 }

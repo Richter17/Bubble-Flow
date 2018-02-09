@@ -5,6 +5,7 @@ using UnityEngine;
 public class FanArea : MonoBehaviour {
 
     private FanControl fanControl;
+    
 
     private void Start()
     {

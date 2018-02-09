@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 65991547711593668}
   - component: {fileID: 114027668547014862}
   m_Layer: 0
-  m_Name: Fan
+  m_Name: Static Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.6708174, y: 4.86592, z: 0.2}
-  m_Center: {x: 0, y: 2.01796, z: 0}
+  m_Size: {x: 1.6708174, y: 4, z: 0.2}
+  m_Center: {x: 0, y: 2.4, z: 0}
 --- !u!65 &65991547711593668
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3582,8 +3582,8 @@ ParticleSystemRenderer:
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
-  m_MinParticleSize: 0.1
-  m_MaxParticleSize: 0.3
+  m_MinParticleSize: 0.06
+  m_MaxParticleSize: 0.08
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
