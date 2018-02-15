@@ -8,6 +8,7 @@ public class PanelManager : MonoBehaviour {
 
     private void Awake()
     {
+        
         Panel[] goes = GetComponentsInChildren<Panel>();
         Debug.Log(goes.Length);
         foreach (Panel panel in goes)
@@ -15,6 +16,7 @@ public class PanelManager : MonoBehaviour {
             panel.gameObject.SetActive(false);
             panels.Add(panel.panelName, panel.gameObject);
             
+
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
@@ -21,16 +22,16 @@ public class LevelManager : MonoBehaviour {
     {
         GetPanel("Game Over");
 
-        StartCoroutine(SetLevel(Application.loadedLevel, 1, false));
+        StartCoroutine(SetLevel(Application.loadedLevelName, 1, false));
         
     }
-    public void Win()
+    public void Win(string sceneName)
     {
         GetPanel("Win");
-        
-        #if UNITY_EDITOR
-        StartCoroutine(SetLevel(Application.loadedLevel, 1, true));
-        #endif
+        StartCoroutine(SetLevel(sceneName, 1, true));
+        //#if UNITY_EDITOR
+        //StartCoroutine(SetLevel(Application.loadedLevel, 1, true));
+        //#endif
     }
 
     private void GetPanel(string panelName)
@@ -40,11 +41,22 @@ public class LevelManager : MonoBehaviour {
 
     }
 
-    IEnumerator SetLevel(int level, float delayInSeconds , bool restartLevel)
+    IEnumerator SetLevel(string level, float delayInSeconds , bool restartLevel)
     {
         yield return new WaitForSeconds(delayInSeconds);
         if(activePanel!=null) activePanel.SetActive(false);
-        if(restartLevel) Application.LoadLevel(level);
+        if(restartLevel) SceneManager.LoadScene(level);
+    }
+
+    public void Quit()
+    {
+        Debug.Log("Quit requested");
+        Application.Quit();
+    }
+
+    public void EnterAScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
 }

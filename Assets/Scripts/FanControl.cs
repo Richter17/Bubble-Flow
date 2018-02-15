@@ -9,7 +9,6 @@ public class FanControl : MonoBehaviour {
     public Rigidbody bubbleRigid;
     BoxCollider box;
     ParticleSystem wind;
-    Camera cam;
 
     private void OnDrawGizmos()
     {

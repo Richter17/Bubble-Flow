@@ -6,6 +6,7 @@ public class BubbleBehavior : MonoBehaviour {
 
     Rigidbody rigid;
     public float leftDeviation, rightDeviation;
+    public static int points = 0;
 
     private Vector3 startPos;
 	// Use this for initialization
@@ -36,5 +37,15 @@ public class BubbleBehavior : MonoBehaviour {
         LevelManager.manager.Lose();
         transform.position = startPos;
         rigid.velocity = Vector3.zero;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Objects obj = other.GetComponent<Objects>();
+        if(obj)
+        {
+            points++;
+            Destroy(obj.gameObject);
+        }
     }
 }

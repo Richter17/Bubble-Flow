@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Activations : MonoBehaviour {
 
-    public Camera cam;
+    private Camera cam;
     FanControl fanControl;
 	// Use this for initialization
 	void Start () {
-		
+        cam = GameObject.FindObjectOfType<Camera>();
 	}
 	
 	// Update is called once per frame
