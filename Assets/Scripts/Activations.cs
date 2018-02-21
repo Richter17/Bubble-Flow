@@ -5,7 +5,7 @@ using UnityEngine;
 public class Activations : MonoBehaviour {
 
     private Camera cam;
-    FanControl fanControl;
+    FansController fansController;
 	// Use this for initialization
 	void Start () {
         cam = GameObject.FindObjectOfType<Camera>();
@@ -19,11 +19,11 @@ public class Activations : MonoBehaviour {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 1000.0f))
             {
-                fanControl = hit.transform.GetComponent<FanControl>();
+                fansController = hit.transform.GetComponent<FansController>();
 
-                if (fanControl)
+                if (fansController)
                 {
-                    fanControl.activateFan = true;
+                    fansController.activateFan = true;
                     //Debug.Log(fanControl.gameObject.name);
                 }
                 
@@ -31,8 +31,8 @@ public class Activations : MonoBehaviour {
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            if (fanControl == null) return;
-            fanControl.activateFan = false;
+            if (fansController == null) return;
+            fansController.activateFan = false;
         }
         
     }

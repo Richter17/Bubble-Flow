@@ -2,37 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticFan : MonoBehaviour {
+public class StaticFan : FansController {
 
-    public float fanForce;
- //   public bool activateFan;
-    public Rigidbody bubbleRigid;
-    BoxCollider box;
-    ParticleSystem wind;
-
-    private void OnDrawGizmos()
+    public override void Start()
     {
-        box = GetComponentInChildren<FanArea1>().GetComponent<BoxCollider>();
-        Matrix4x4 effectArea = Matrix4x4.TRS(transform.position, transform.rotation, box.size);
-        Gizmos.matrix = effectArea;
-
-        Gizmos.DrawWireCube(new Vector3(0, (box.center.y / box.size.y)), transform.localScale);
-    }
-    // Use this for initialization
-    void Start () {
-        box = GetComponentInChildren<FanArea1>().GetComponent<BoxCollider>();
-        wind = GetComponentInChildren<ParticleSystem>();
-        var windMain = wind.main;
-        windMain.startSpeed = new ParticleSystem.MinMaxCurve(5f, box.center.y * box.size.y);
+        base.Start();
         wind.Play();
     }
-	
-	// Update is called once per frame
-	void Update () {
+    public override void FixedUpdate()
+    {
+        //base.FixedUpdate();
         if (bubbleRigid)
         {
-            //Debug.Log("push bubble");
-            bubbleRigid.AddForce((bubbleRigid.transform.position - transform.position).normalized * fanForce * Time.deltaTime);
+            Debug.Log("push bubble to" + (transform.GetChild(0).position - transform.position));
+            bubbleRigid.AddForce((transform.GetChild(0).position - transform.position).normalized * fanForce);
         }
     }
 }

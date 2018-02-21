@@ -900,9 +900,9 @@ Canvas:
   m_GameObject: {fileID: 1813646700}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1972220680}
+  m_PlaneDistance: 83.84
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1128,7 +1128,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Option 1
+  m_Text: 'Option 2
 
 '
 --- !u!222 &2122671205
