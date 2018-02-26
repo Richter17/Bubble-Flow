@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class PanelManager : MonoBehaviour {
 
-    public Dictionary<string, GameObject> panels = new Dictionary<string, GameObject>();
-
-    private void Awake()
+    public GameObject winPanel, losePanel, pausePanel;
+    bool paused = false;
+    private void Start()
     {
-        
-        Panel[] goes = GetComponentsInChildren<Panel>();
-        Debug.Log(goes.Length);
-        foreach (Panel panel in goes)
+        BubbleBehavior.hitSomething += OccurOnBubbleHit;
+    }
+    void OccurOnBubbleHit(bool isGoal)
+    {
+        if (isGoal)
         {
-            panel.gameObject.SetActive(false);
-            panels.Add(panel.panelName, panel.gameObject);
-            
-
+            //show win go to nex level
+            Debug.Log("win panel");
+            StartCoroutine(ShowPanelAndHideIt(winPanel));
+        }
+        else
+        {
+            //show lose panel return t0 start
+            Debug.Log("you lose");
+            StartCoroutine(ShowPanelAndHideIt(losePanel));
         }
     }
+
+    public void ShowHidePausePanel()
+    {
+        paused = (paused) ? false : true;
+        pausePanel.SetActive(paused);
+
+    }
+
+    IEnumerator ShowPanelAndHideIt(GameObject panel)
+    {
+        panel.SetActive(true);
+        yield return new WaitForSeconds(1);
+        panel.SetActive(false);
+    }
+
 }

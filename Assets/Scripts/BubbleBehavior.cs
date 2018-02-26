@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BubbleBehavior : MonoBehaviour {
 
+    public delegate void HitGoalOrWall(bool isGoal);
+    public static event HitGoalOrWall hitSomething;
+
     public float deviation;
 
     public static int points = 0;
@@ -12,20 +15,29 @@ public class BubbleBehavior : MonoBehaviour {
 
 
     private Vector3 startPos;
-	// Use this for initialization
-	void Start () {
+
+    private void Awake()
+    {
+        if (hitSomething != null)
+        {
+            //Removing all events that are in the delegate, 
+            //because it's static we have to remove all events from the source before we load the scene againn
+            System.Delegate[] deletegates = hitSomething.GetInvocationList();
+            for (int i = 0; i < deletegates.Length; i++)
+            {
+                //Remove all event
+                hitSomething -= deletegates[i] as HitGoalOrWall;
+            }
+        }
+    }
+    // Use this for initialization
+    void Start () {
+
         rigid = GetComponent<Rigidbody>();
         startPos = transform.position;
         StartCoroutine(BubbleMove());
+        hitSomething += LoseAndReturnToStart;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-    }
-    private void FixedUpdate()
-    {
-    }
 
     IEnumerator BubbleMove()
     {
@@ -40,21 +52,37 @@ public class BubbleBehavior : MonoBehaviour {
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void LoseAndReturnToStart(bool lost)
     {
-        Debug.Log("Pop! you lose");
+        if(!lost)
+        {            
+            transform.position = startPos;
+        }
+    }
+
+
+
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.CompareTag("Win"))
+        {
+            if (hitSomething != null)
+            {
+                hitSomething(true);
+            }
+        }
+        else
+        {
+            if (hitSomething != null)
+            {
+                hitSomething(false);
+            }
+            //Debug.Log("Pop! you lose");
+        }
+        
         //LevelManager.manager.Lose();
         //transform.position = startPos;
         //rigid.velocity = Vector3.zero;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Objects obj = other.GetComponent<Objects>();
-        if(obj)
-        {
-            points++;
-            Destroy(obj.gameObject);
-        }
-    }
+    
 }

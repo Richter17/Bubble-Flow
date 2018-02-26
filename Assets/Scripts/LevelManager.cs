@@ -1,51 +1,79 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    public static LevelManager manager;
-    public PanelManager panelManager;
-    GameObject activePanel;
-    private void Awake()
-    {
-        if (manager != null)
-        {
-            Debug.LogError("Singleton violation");
-            return;
-        }
-        manager = this;
-    }
-    public void Lose()
-    {
-        GetPanel("Game Over");
+    public string nextLevel;
+    bool paused = false;
 
-        StartCoroutine(SetLevel(Application.loadedLevelName, 1, false));
+    private void Start()
+    {
+        BubbleBehavior.hitSomething += Win;
+    }
+    //public void Lose()
+    //{
+    //    GetPanel("Game Over");
+
+    //    StartCoroutine(SetLevel(Application.loadedLevelName, 1, false));
+
+    //}
+    public void Win(bool win)
+    {
+        
+        if (win)
+        {
+            
+#if UNITY_EDITOR
+
+            StartCoroutine(SetLevel(string.Empty, 1, true));
+            return;
+#endif
+            StartCoroutine(SetLevel(nextLevel, 1, false));
+
+        }
+
         
     }
-    public void Win(string sceneName)
-    {
-        GetPanel("Win");
-        StartCoroutine(SetLevel(sceneName, 1, true));
-        //#if UNITY_EDITOR
-        //StartCoroutine(SetLevel(Application.loadedLevel, 1, true));
-        //#endif
-    }
 
-    private void GetPanel(string panelName)
-    {
-        if (!panelManager.panels.TryGetValue(panelName, out activePanel)) return;
-        activePanel.SetActive(true);
+    //private void GetPanel(string panelName)
+    //{
+    //    if (!panelManager.panels.TryGetValue(panelName, out activePanel)) return;
+    //    activePanel.SetActive(true);
 
-    }
+    //}
 
-    IEnumerator SetLevel(string level, float delayInSeconds , bool restartLevel)
+    IEnumerator SetLevel(string level, float delayInSeconds, bool restartLevel)
     {
         yield return new WaitForSeconds(delayInSeconds);
-        if(activePanel!=null) activePanel.SetActive(false);
-        if(restartLevel) SceneManager.LoadScene(level);
+        if (restartLevel)
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync(level);
+        }
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+    }
+
+    public void Pause()
+    {
+        paused = (paused) ? false : true;
+        Time.timeScale = (paused) ? 0 : 1;
+
+    }
+
+    public void ReturnToManu()
+    {
+        Debug.Log("Manu Requested");
+        SceneManager.LoadSceneAsync("First Scene");
     }
 
     public void Quit()
@@ -54,9 +82,10 @@ public class LevelManager : MonoBehaviour {
         Application.Quit();
     }
 
-    public void EnterAScene(string sceneName)
+    public void LoadNewScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadSceneAsync(sceneName);
     }
+
 
 }

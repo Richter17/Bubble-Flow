@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlowEffectArea : MonoBehaviour {
 
     private FansController fansController;
+    private ParticleSystem wind;
     private void Start()
     {
         fansController = transform.parent.GetComponent<FansController>();
