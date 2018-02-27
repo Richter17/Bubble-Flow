@@ -479,6 +479,30 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4558558668563814, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594231341636830, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: randomSeed
+      value: -1521852458
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594231341636830, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 0.305
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092162255213248, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: windXArea
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594231341636830, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
   m_IsPrefabParent: 0
@@ -687,6 +711,11 @@ Prefab:
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594231341636830, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: ShapeModule.radius.value
+      value: 0.305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}

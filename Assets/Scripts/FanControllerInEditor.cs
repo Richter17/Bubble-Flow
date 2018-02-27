@@ -11,6 +11,7 @@ public class FanControllerInEditor : MonoBehaviour {
     public float windYArea;
     public float windXArea;
     private Transform windCollider;
+    
     // Use this for initialization
     void Start () {
         //first get the default size of the fan
@@ -34,7 +35,13 @@ public class FanControllerInEditor : MonoBehaviour {
         windCollider.localScale = colliderScale;
         windCollider.localPosition = colliderPos;
 
-        var main = GetComponentInChildren<ParticleSystem>().main;
+        ParticleSystem windShow = GetComponentInChildren<ParticleSystem>();
+        var main = windShow.main;
+        var shape = windShow.shape;
+        var emisson = windShow.emission;
+        emisson.rateOverTime = windXArea * 200 / 3;
+        shape.radius = 0.37f*windXArea -0.25f;
         main.startSpeed = windYArea;
+        
     }
 }
