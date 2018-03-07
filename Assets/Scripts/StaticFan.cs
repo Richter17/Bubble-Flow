@@ -14,7 +14,7 @@ public class StaticFan : FansController {
         //base.FixedUpdate();
         if (bubbleRigid)
         {
-            Debug.Log("push bubble to" + (transform.GetChild(0).position - transform.position));
+            //Debug.Log("push bubble to" + (transform.GetChild(0).position - transform.position));
             bubbleRigid.AddForce((transform.GetChild(0).position - transform.position).normalized * fanForce);
         }
     }

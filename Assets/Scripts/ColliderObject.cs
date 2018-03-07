@@ -11,6 +11,10 @@ public class ColliderObject : MonoBehaviour {
 
     public virtual void OnCollisionEnter(Collision coll)
     {
+        if(canBeAttached)
+        {
+            Debug.Log("attached");
+        }
         Debug.Log("hit something that is not wall or goal");
     }
 

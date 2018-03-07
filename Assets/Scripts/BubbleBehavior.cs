@@ -21,7 +21,7 @@ public class BubbleBehavior : MonoBehaviour {
         if (hitSomething != null)
         {
             //Removing all events that are in the delegate, 
-            //because it's static we have to remove all events from the source before we load the scene againn
+            //because it's static we have to remove all events from the source before we load the scene again
             System.Delegate[] deletegates = hitSomething.GetInvocationList();
             for (int i = 0; i < deletegates.Length; i++)
             {
