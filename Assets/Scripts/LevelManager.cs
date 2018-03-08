@@ -26,11 +26,11 @@ public class LevelManager : MonoBehaviour {
         if (win)
         {
             
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 
-            StartCoroutine(SetLevel(string.Empty, 1, true));
-            return;
-#endif
+//            StartCoroutine(SetLevel(string.Empty, 1, true));
+//            return;
+//#endif
             StartCoroutine(SetLevel(nextLevel, 1, false));
 
         }
