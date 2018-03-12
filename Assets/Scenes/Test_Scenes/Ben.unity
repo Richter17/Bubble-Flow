@@ -159,7 +159,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1072836168848660, guid: feb1a6585f00de14abae1bca1f32c3e4, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: feb1a6585f00de14abae1bca1f32c3e4, type: 2}
@@ -286,11 +286,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4187363960334562, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4187363960334562, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.5014474
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4187363960334562, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -319,25 +319,44 @@ Prefab:
     - target: {fileID: 198594231341636830, guid: aa57021a022b4ac45959acf4afd2643f,
         type: 2}
       propertyPath: ShapeModule.radius.value
-      value: 0.305
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 114092162255213248, guid: aa57021a022b4ac45959acf4afd2643f,
         type: 2}
       propertyPath: windYArea
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4558558668563814, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4558558668563814, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 198594231341636830, guid: aa57021a022b4ac45959acf4afd2643f,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 6
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114879505873309846, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: fanForce
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114092162255213248, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: windXArea
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558558668563814, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198594231341636830, guid: aa57021a022b4ac45959acf4afd2643f,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 333.33334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa57021a022b4ac45959acf4afd2643f, type: 2}
@@ -351,11 +370,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4821197679329836, guid: a2b479f58f29b0241aacbb165f219e73, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.24
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4821197679329836, guid: a2b479f58f29b0241aacbb165f219e73, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.8
+      value: 19.1
       objectReference: {fileID: 0}
     - target: {fileID: 4821197679329836, guid: a2b479f58f29b0241aacbb165f219e73, type: 2}
       propertyPath: m_LocalPosition.z
@@ -484,11 +503,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4840155021837576, guid: 4428d70385f732944ba4763f331f80b8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.773072
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4840155021837576, guid: 4428d70385f732944ba4763f331f80b8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.3954563
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4840155021837576, guid: 4428d70385f732944ba4763f331f80b8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -517,25 +536,25 @@ Prefab:
     - target: {fileID: 198480102933811894, guid: 4428d70385f732944ba4763f331f80b8,
         type: 2}
       propertyPath: ShapeModule.radius.value
-      value: 0.305
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 114589797147202172, guid: 4428d70385f732944ba4763f331f80b8,
         type: 2}
       propertyPath: windYArea
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4157115293910094, guid: 4428d70385f732944ba4763f331f80b8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4157115293910094, guid: 4428d70385f732944ba4763f331f80b8, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 198480102933811894, guid: 4428d70385f732944ba4763f331f80b8,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 198480102933811894, guid: 4428d70385f732944ba4763f331f80b8,
         type: 2}
@@ -545,16 +564,16 @@ Prefab:
     - target: {fileID: 114589797147202172, guid: 4428d70385f732944ba4763f331f80b8,
         type: 2}
       propertyPath: windXArea
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198480102933811894, guid: 4428d70385f732944ba4763f331f80b8,
         type: 2}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
+      value: 333.33334
       objectReference: {fileID: 0}
     - target: {fileID: 4157115293910094, guid: 4428d70385f732944ba4763f331f80b8, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198480102933811894, guid: 4428d70385f732944ba4763f331f80b8,
         type: 2}
@@ -605,6 +624,11 @@ Prefab:
         type: 2}
       propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114386868007440144, guid: 4428d70385f732944ba4763f331f80b8,
+        type: 2}
+      propertyPath: fanForce
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4428d70385f732944ba4763f331f80b8, type: 2}

@@ -43,8 +43,7 @@ public class StaticControlledBurst : FansController {
 
                     if (bubbleRigid)
                     {
-                        //Debug.Log("push bubble to" + (transform.GetChild(0).position - transform.position));
-                        bubbleRigid.AddForce((bubbleRigid.transform.position - transform.position).normalized * fanForce);
+                        PushTheBubble(bubbleRigid);
                     }
                 }
             }
