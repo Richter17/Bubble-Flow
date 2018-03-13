@@ -8,6 +8,8 @@ using System.IO;
 
 public class SceneEditorWindow : EditorWindow
 {
+    public readonly static string SOURCE = "Scene_Source_Path";
+    public readonly static string DESTINATION = "Scene_Des_Path";
 
     public static List<EditorBuildSettingsScene> buildScenes = new List<EditorBuildSettingsScene>();
     PopupWindowContent checkIfSureToRemoveScene;
@@ -69,13 +71,27 @@ public class SceneEditorWindow : EditorWindow
 
         if (showSettings)
         {
-            
+            if(!PlayerPrefs.HasKey(SOURCE))
+            {
+                PlayerPrefs.SetString(SOURCE, "");
+            }
+            sourceScenePath = PlayerPrefs.GetString(SOURCE);
+            if (!PlayerPrefs.HasKey(DESTINATION))
+            {
+                PlayerPrefs.SetString(SOURCE, "");
+            }
+            destinationScenePath = PlayerPrefs.GetString(DESTINATION);
             EditorGUILayout.BeginHorizontal();
             
             GUILayout.Label("Source scene: ", EditorStyles.boldLabel, GUILayout.Width(130));
             GUILayout.FlexibleSpace();
             if(GUILayout.Button("Browse", GUILayout.Width(70)))
                 sourceScenePath = EditorUtility.OpenFilePanel("Scene File","","unity");
+            if(sourceScenePath!=string.Empty)
+            {
+                PlayerPrefs.SetString(SOURCE, sourceScenePath);
+            }
+
             EditorGUILayout.EndHorizontal();
             GUILayout.Space(3);
             GUILayout.Label(sourceScenePath);
@@ -87,9 +103,14 @@ public class SceneEditorWindow : EditorWindow
             GUILayout.FlexibleSpace();
             if (GUILayout.Button("Browse", GUILayout.Width(70)))
                 destinationScenePath = EditorUtility.OpenFolderPanel("Scene Destination", "", "");
+            if (destinationScenePath != string.Empty)
+            {
+                PlayerPrefs.SetString(DESTINATION, destinationScenePath);
+            }
             EditorGUILayout.EndHorizontal();
             GUILayout.Space(3);
             GUILayout.Label(destinationScenePath);
+            //xcxcdff
         }
     }
 
