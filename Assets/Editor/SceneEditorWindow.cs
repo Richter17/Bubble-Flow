@@ -8,13 +8,15 @@ using System.IO;
 
 public class SceneEditorWindow : EditorWindow
 {
+    //the keys of the playerprefs to save changes
     public readonly static string SOURCE = "Scene_Source_Path";
     public readonly static string DESTINATION = "Scene_Des_Path";
+    static string sourceScenePath, destinationScenePath;
 
     public static List<EditorBuildSettingsScene> buildScenes = new List<EditorBuildSettingsScene>();
-    PopupWindowContent checkIfSureToRemoveScene;
-    static string sourceScenePath, destinationScenePath;
+
     bool showSettings;
+
     [MenuItem("Window/Scene Editor Menu")]
     static void Init()
     {
@@ -110,7 +112,7 @@ public class SceneEditorWindow : EditorWindow
             EditorGUILayout.EndHorizontal();
             GUILayout.Space(3);
             GUILayout.Label(destinationScenePath);
-            //xcxcdff
+            
         }
     }
 
