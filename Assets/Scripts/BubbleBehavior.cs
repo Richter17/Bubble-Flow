@@ -57,6 +57,7 @@ public class BubbleBehavior : MonoBehaviour {
         if(!lost)
         {            
             transform.position = startPos;
+            rigid.velocity = Vector3.zero;
         }
     }
 
