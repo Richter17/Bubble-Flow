@@ -7,7 +7,7 @@ public class StaticFan : FansController {
     public override void Start()
     {
         base.Start();
-        wind.Play();
+        ActivateWindFeedback();
     }
     public override void FixedUpdate()
     {

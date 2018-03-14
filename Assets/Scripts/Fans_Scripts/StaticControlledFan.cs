@@ -9,8 +9,7 @@ public class StaticControlledFan : FansController {
         //base.FixedUpdate();
         if (activateFan)
         {
-            if (wind.isStopped)
-                wind.Play();
+            ActivateWindFeedback();
             if (bubbleRigid)
             {
                 PushTheBubble(bubbleRigid);
@@ -18,9 +17,7 @@ public class StaticControlledFan : FansController {
         }
         else
         {
-            if (wind.isPlaying)
-                wind.Stop();
-
+            DeactivateWindFeedback();
         }
         //Debug.Log(bubbleRigid);
     }

@@ -35,13 +35,13 @@ public class FanControllerInEditor : MonoBehaviour {
         windCollider.localScale = colliderScale;
         windCollider.localPosition = colliderPos;
 
-        ParticleSystem windShow = GetComponentInChildren<ParticleSystem>();
-        var main = windShow.main;
-        var shape = windShow.shape;
-        var emisson = windShow.emission;
-        emisson.rateOverTime = windXArea * 200 / 3;
-        shape.radius = 0.37f*windXArea -0.25f;
-        main.startSpeed = windYArea;
+        //ParticleSystem windShow = GetComponentInChildren<ParticleSystem>();
+        //var main = windShow.main;
+        //var shape = windShow.shape;
+        //var emisson = windShow.emission;
+        //emisson.rateOverTime = windXArea * 200 / 3;
+        //shape.radius = 0.37f*windXArea -0.25f;
+        //main.startSpeed = windYArea;
         
     }
 }

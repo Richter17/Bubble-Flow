@@ -14,9 +14,9 @@ public class StaticControlledBurst : FansController {
         {
             burst = false;
             
-            if (wind.isPlaying)
+            if (windIsActivate)
             {
-                wind.Stop();
+                DeactivateWindFeedback();
                 letGo = false;
             }
                 
@@ -38,8 +38,8 @@ public class StaticControlledBurst : FansController {
             {
                 if (letGo)
                 {
-                    if (wind.isStopped)
-                        wind.Play();
+                    if (!windIsActivate)
+                        ActivateWindFeedback();
 
                     if (bubbleRigid)
                     {

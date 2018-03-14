@@ -51,6 +51,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4102430365256298}
   - component: {fileID: 65983744150889258}
+  - component: {fileID: 65336950418180842}
+  - component: {fileID: 65450825738021746}
   m_Layer: 0
   m_Name: Lose Collider
   m_TagString: Untagged
@@ -80,8 +82,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1456742833935324}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9, y: 1.43, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.42103577, w: 0.90704405}
+  m_LocalPosition: {x: -22.41, y: 60.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4542034575910016}
@@ -89,7 +91,7 @@ Transform:
   - {fileID: 4102430365256298}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -49.8}
 --- !u!4 &4102430365256298
 Transform:
   m_ObjectHideFlags: 1
@@ -129,6 +131,30 @@ Transform:
   m_Father: {fileID: 4098463082990634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65336950418180842
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808956461259180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 1, z: 1}
+  m_Center: {x: 1.41, y: 0.93, z: 0}
+--- !u!65 &65450825738021746
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808956461259180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 1, z: 1}
+  m_Center: {x: -1.41, y: 0.93, z: 0}
 --- !u!65 &65983744150889258
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -151,7 +177,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.91725445
-  m_Height: 3.096046
+  m_Height: 2.72
   m_Direction: 0
   m_Center: {x: -0.0005543232, y: 0.6536975, z: 0}
 --- !u!212 &212457903785999466

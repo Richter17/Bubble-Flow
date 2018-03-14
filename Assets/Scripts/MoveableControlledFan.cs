@@ -50,8 +50,7 @@ public class MoveableControlledFan : FansController {
         {
             isPressed = true;
             firstPosTouch = Input.mousePosition;
-            if (wind.isStopped)
-                wind.Play();
+
             if (bubbleRigid)
             {
                 //Debug.Log("push bubble to" + (transform.GetChild(0).position - transform.position));
@@ -60,8 +59,6 @@ public class MoveableControlledFan : FansController {
         }
         else
         {
-            if (wind.isPlaying)
-                wind.Stop();
             isPressed = false;
         }
     }
