@@ -60,6 +60,7 @@ public class LevelManager : MonoBehaviour {
 
     public void RestartLevel()
     {
+        CheckIfPaused();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
@@ -72,6 +73,7 @@ public class LevelManager : MonoBehaviour {
 
     public void ReturnToManu()
     {
+        CheckIfPaused();
         Debug.Log("Manu Requested");
         SceneManager.LoadSceneAsync("First Scene");
     }
@@ -87,5 +89,12 @@ public class LevelManager : MonoBehaviour {
         SceneManager.LoadSceneAsync(sceneName);
     }
 
+    private void CheckIfPaused()
+    {
+        if(paused)
+        {
+            Time.timeScale = 1;
+        }
+    }
 
 }

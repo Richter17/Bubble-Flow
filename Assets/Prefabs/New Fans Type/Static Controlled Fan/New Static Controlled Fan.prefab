@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114559559428774962}
   - component: {fileID: 114216935312871276}
   m_Layer: 0
-  m_Name: Static Controlled Fan
+  m_Name: New Static Controlled Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

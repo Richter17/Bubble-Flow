@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114291719463664806}
   - component: {fileID: 114337081683615894}
   m_Layer: 0
-  m_Name: Static Controlled Burst
+  m_Name: New Static Controlled Burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
