@@ -33,8 +33,6 @@ public class FansController : MonoBehaviour
         float bubbleDistanceFromFan = m*x+1;
         Debug.Log(bubbleDistanceFromFan);
         bubble.AddForce((bubble.transform.position - transform.position).normalized * (fanForce * bubbleDistanceFromFan));
-<<<<<<< HEAD:Assets/Scripts/FansController.cs
-=======
     }
 
     public virtual void PushTheBubble(Rigidbody bubble)
@@ -52,7 +50,6 @@ public class FansController : MonoBehaviour
     {
         windIsActivate = false;
         effectCollider.GetComponent<MeshRenderer>().material.color = new Color32(255, 255, 255, 0);
->>>>>>> bd8675cd1dd3947f5c5b39097a4a073a93049bd6:Assets/Scripts/Fans_Scripts/FansController.cs
     }
 }
 
