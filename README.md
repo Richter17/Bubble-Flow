@@ -18,3 +18,8 @@ add the levels to the build in the Build settings(drag the scenes you want and o
 Then go to the GUI in the scene in the insepctor there is a script Level Manager. in the Next Level property write the name of the next
 scene in which you want to move after compliting a level. Check if it doesn't throw any errors and you good to go.
 6. Wish me Bon Voayage and good luck for you, any question about the code or about errors, please notify me in the group :)
+
+רשימת פיצ'רים
+1. אנימציות - מאווררים מסתובבים, בועה מתפוצצת, רוח, נסיכה זזה(בקטנה) נסיכה נופלת
+2. GUI - תפריט ראשית, פאנל סוף שלב,כפתור ריסט - פאנל הפסד,כפתור תפריט - פאנל תפריט(שהוא גם בפאוז), פאנל שלבים. תצוגת של כוכבים
+3. פיצ'רים - בועות שניתן לאסוף אותן, אובייקטים זזים, מאורר זז על ציר.   
