@@ -19,7 +19,13 @@ Then go to the GUI in the scene in the insepctor there is a script Level Manager
 scene in which you want to move after compliting a level. Check if it doesn't throw any errors and you good to go.
 6. Wish me Bon Voayage and good luck for you, any question about the code or about errors, please notify me in the group :)
 
-רשימת פיצ'רים
-1. אנימציות - מאווררים מסתובבים, בועה מתפוצצת, רוח, נסיכה זזה(בקטנה) נסיכה נופלת
-2. GUI - תפריט ראשית, פאנל סוף שלב,כפתור ריסט - פאנל הפסד,כפתור תפריט - פאנל תפריט(שהוא גם בפאוז), פאנל שלבים. תצוגת של כוכבים
-3. פיצ'רים - בועות שניתן לאסוף אותן, אובייקטים זזים, מאורר זז על ציר.   
+Features List:
+1. animatoins - fans motions, explode bubble, wind, princess moving in bubble, princess falling.
+2. GUI - 
+	Panels - 
+		Losing panel - reset level button, return to menu button
+		win panel - next level button, reset level button, return to menu button
+		in game panel - menu button(will pause the game) go to panel which has a return to menu button, restart level button, collectable stat(3 objects)
+		main menu - start the last level, level menu button, exit button
+		level menu - has all the available levels to choose
+3. Mechanics - collectable items(3 bubbles per level), moving bad objects, moveable controlled fan
