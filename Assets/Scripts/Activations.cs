@@ -6,6 +6,7 @@ public class Activations : MonoBehaviour {
 
     private Camera cam;
     FansController fansController;
+    BubbleActivator bubbleActivator;
 	// Use this for initialization
 	void Start () {
         cam = GameObject.FindObjectOfType<Camera>();
@@ -24,8 +25,15 @@ public class Activations : MonoBehaviour {
                 if (fansController)
                 {
                     fansController.activateFan = true;
+                    return;
                     //Debug.Log(fanControl.gameObject.name);
                 }
+
+                //bubbleActivator = hit.transform.GetComponent<BubbleActivator>();
+                //if (bubbleActivator)
+                //{
+                //    bubbleActivator.HitBubble();
+                //}
                 
             }
         }

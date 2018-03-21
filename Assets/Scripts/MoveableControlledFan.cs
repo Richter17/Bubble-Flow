@@ -11,35 +11,37 @@ public class MoveableControlledFan : FansController {
 
     public Axis axis;
     public float distance = 5;
-    public float divider;
 
     bool isPressed;
-    Vector3 firstPosTouch;
+    Vector3 touchPosition;
     Vector3 firstPos;
+    Vector3 newPosition;
     float veriable;
     public override void Start()
     {
         base.Start();
-        Vector3 firstPos = transform.position;
+        firstPos = newPosition = transform.position;
     }
 
     private void Update()
     {
         if (isPressed)
         {
-            
+            touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //veriable = Input.mousePosition.x - firstPosTouch.x;
             if (axis == Axis.X)
             {
-                veriable = Mathf.Clamp((Input.mousePosition.x - firstPosTouch.x)/divider, transform.position.x - (distance / 2), transform.position.x + (distance / 2));
-                firstPos.x = veriable;
+                
+                veriable = Mathf.Clamp(touchPosition.x, firstPos.x - (distance / 2), firstPos.x + (distance / 2));
+                newPosition.x = veriable;
             }
-            else if(axis == Axis.Y)
+            else if (axis == Axis.Y)
             {
-                veriable = Mathf.Clamp((Input.mousePosition.y - firstPosTouch.y) / divider, transform.position.y - (distance / 2), transform.position.y + (distance / 2));
-                firstPos.y = veriable;
+                veriable = Mathf.Clamp(touchPosition.y, firstPos.y - (distance / 2), firstPos.y + (distance / 2));
+                newPosition.y = veriable;
             }
-
-            transform.position = firstPos;
+            //firstPos.x = veriable;
+            transform.position = newPosition;
         }
     }
 
@@ -48,18 +50,22 @@ public class MoveableControlledFan : FansController {
         //base.FixedUpdate();
         if (activateFan)
         {
+            if(!isPressed)
+                touchPosition = Input.mousePosition;
+
             isPressed = true;
-            firstPosTouch = Input.mousePosition;
+
+            ActivateWindFeedback();
 
             if (bubbleRigid)
             {
-                //Debug.Log("push bubble to" + (transform.GetChild(0).position - transform.position));
-                bubbleRigid.AddForce((transform.GetChild(0).position - transform.position).normalized * fanForce);
+                PushTheBubble(bubbleRigid);
             }
         }
         else
         {
             isPressed = false;
+            DeactivateWindFeedback();
         }
     }
 }

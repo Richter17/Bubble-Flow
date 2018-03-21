@@ -54,6 +54,10 @@ public class StaticControlledBurst : FansController {
             }           
             
         }
+        else
+        {
+            DeactivateWindFeedback();
+        }
         //base.FixedUpdate();
         
     }
