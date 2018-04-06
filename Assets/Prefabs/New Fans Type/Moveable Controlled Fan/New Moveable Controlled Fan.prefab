@@ -156,9 +156,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 1
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 231214dd5c290c04884e4654d0bef792, type: 3}
 --- !u!114 &114448816446282380
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7e3a699ed2e0b409958d618c004f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windHeight: 59.063335
+  windHeight: 54.25
   windWidth: 50
 --- !u!114 &114549009790891630
 MonoBehaviour:
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76aa5ed08f38874478d3ec0c775891b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fanForce: 200
+  fanForce: 50
   activateFan: 0
   bubbleRigid: {fileID: 0}
   axis: 0
