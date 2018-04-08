@@ -72,8 +72,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875260677877548}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 13.052093, z: 0}
-  m_LocalScale: {x: 50, y: 10, z: 54.296703}
+  m_LocalPosition: {x: 0, y: 18.365385, z: 0}
+  m_LocalScale: {x: 61.5, y: 10, z: 76.4}
   m_Children: []
   m_Father: {fileID: 4612070921129524}
   m_RootOrder: 1
@@ -84,15 +84,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729978224873166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.29887417, w: 0.9542926}
+  m_LocalPosition: {x: -5, y: 1.08, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4682489899005914}
   - {fileID: 4564756295153904}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -34.78}
 --- !u!4 &4682489899005914
 Transform:
   m_ObjectHideFlags: 1
@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 1800326921431856}
   m_LocalRotation: {x: 0, y: -0, z: -0.000000029802319, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1.0825096, y: 1.0825098, z: 1.0825098}
   m_Children: []
   m_Father: {fileID: 4612070921129524}
   m_RootOrder: 0
@@ -178,13 +178,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729978224873166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d7e3a699ed2e0b409958d618c004f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windHeight: 67.87088
-  windWidth: 50
+  windHeight: 95.5
+  windWidth: 61.5
 --- !u!114 &114559559428774962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3657b32fc1355643a1a37494ba4c98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fanForce: 200
+  fanForce: 100
   activateFan: 0
   bubbleRigid: {fileID: 0}
 --- !u!135 &135921501120471416

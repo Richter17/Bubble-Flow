@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -10616,60 +10617,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4564756295153904, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 18.21886
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564756295153904, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 75.79045
-      objectReference: {fileID: 0}
-    - target: {fileID: 4612070921129524, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 41.083
-      objectReference: {fileID: 0}
-    - target: {fileID: 114216935312871276, guid: 780ccb52433c6b2448e9c195d39f4001,
-        type: 2}
-      propertyPath: windHeight
-      value: 98.46746
-      objectReference: {fileID: 0}
-    - target: {fileID: 114216935312871276, guid: 780ccb52433c6b2448e9c195d39f4001,
-        type: 2}
-      propertyPath: windWidth
-      value: 61.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4564756295153904, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 61.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114559559428774962, guid: 780ccb52433c6b2448e9c195d39f4001,
-        type: 2}
-      propertyPath: fanForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 1729978224873166, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
       propertyPath: m_Name
       value: New Static Controlled Fan (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682489899005914, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.083406
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682489899005914, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.0834059
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682489899005914, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.0834059
-      objectReference: {fileID: 0}
-    - target: {fileID: 4612070921129524, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4612070921129524, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 780ccb52433c6b2448e9c195d39f4001, type: 2}
