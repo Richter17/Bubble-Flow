@@ -16,7 +16,7 @@ public class BubbleActivator : MonoBehaviour {
         image = GetComponent<SpriteRenderer>();
         rigid = GetComponentInParent<Rigidbody>();
         bubbleFirstDrag = rigid.drag;
-        Debug.Log("ssds");
+        //Debug.Log("ssds");
     }
     // Use this for initialization
     private void OnMouseDown()

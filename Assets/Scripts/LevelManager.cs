@@ -6,12 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    public string nextLevel;
+    public float twoStars = 40, oneStar = 80, allStars = 100;
+
+    static public int objectiveBubbles = 0;
+    int maxBubbles = 0;
+    float levelGrade = 0;
+
     bool paused = false;
 
     private void Start()
     {
         BubbleBehavior.hitSomething += Win;
+        maxBubbles = objectiveBubbles;
+        Debug.Log("max bubbles" + maxBubbles);
     }
     //public void Lose()
     //{
@@ -25,13 +32,33 @@ public class LevelManager : MonoBehaviour {
         
         if (win)
         {
-            
-//#if UNITY_EDITOR
 
-//            StartCoroutine(SetLevel(string.Empty, 1, true));
-//            return;
-//#endif
-            StartCoroutine(SetLevel(nextLevel, 1, false));
+            levelGrade = (float)objectiveBubbles / (float)maxBubbles;
+            levelGrade *= 100;
+
+            if (100>levelGrade&& levelGrade > oneStar)
+            {
+                Debug.Log("One Star");
+            }
+            else if (oneStar > levelGrade && levelGrade > twoStars)
+            {
+                Debug.Log("Two Stars");
+            }
+            else if (twoStars > levelGrade && levelGrade > 0)
+            {
+                Debug.Log("Three Stars");
+            }
+            else if( levelGrade <= 0)
+            {
+                Debug.Log("All Stars Collected");
+            }
+            //#if UNITY_EDITOR
+
+            //            StartCoroutine(SetLevel(string.Empty, 1, true));
+            //            return;
+            //#endif    
+            
+            //StartCoroutine(SetLevel(nextLevel, 1, false));
 
         }
 
@@ -87,6 +114,16 @@ public class LevelManager : MonoBehaviour {
     public void LoadNewScene(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ResetObjectiveBubbles()
+    {
+        objectiveBubbles = 0;
     }
 
     private void CheckIfPaused()

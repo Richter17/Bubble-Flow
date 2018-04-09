@@ -59,6 +59,10 @@ public class BubbleBehavior : MonoBehaviour {
             transform.position = startPos;
             rigid.velocity = Vector3.zero;
         }
+        else
+        {
+            hitSomething -= LoseAndReturnToStart;
+        }
     }
 
 

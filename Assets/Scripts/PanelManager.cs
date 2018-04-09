@@ -16,7 +16,8 @@ public class PanelManager : MonoBehaviour {
         {
             //show win go to nex level
             Debug.Log("win panel");
-            StartCoroutine(ShowPanelAndHideIt(winPanel));
+            winPanel.SetActive(true);
+            BubbleBehavior.hitSomething -= OccurOnBubbleHit;
         }
         else
         {
@@ -39,5 +40,4 @@ public class PanelManager : MonoBehaviour {
         yield return new WaitForSeconds(1);
         panel.SetActive(false);
     }
-
 }
