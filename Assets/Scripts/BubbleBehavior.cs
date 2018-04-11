@@ -12,7 +12,7 @@ public class BubbleBehavior : MonoBehaviour {
     public static int points = 0;
 
     Rigidbody rigid;
-
+    Animator bubbleAnimator;
 
     private Vector3 startPos;
 
@@ -34,6 +34,7 @@ public class BubbleBehavior : MonoBehaviour {
     void Start () {
 
         rigid = GetComponent<Rigidbody>();
+        bubbleAnimator = GetComponent<Animator>();
         startPos = transform.position;
         StartCoroutine(BubbleMove());
         hitSomething += LoseAndReturnToStart;
@@ -58,6 +59,7 @@ public class BubbleBehavior : MonoBehaviour {
         {            
             transform.position = startPos;
             rigid.velocity = Vector3.zero;
+            bubbleAnimator.Play("Idle");
         }
         else
         {

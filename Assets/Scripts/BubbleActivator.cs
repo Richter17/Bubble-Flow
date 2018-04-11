@@ -6,6 +6,8 @@ public class BubbleActivator : MonoBehaviour {
 
     Rigidbody rigid;
     SpriteRenderer image;
+    Animator bubbleAnimator;
+    int POP = Animator.StringToHash("pop");
 
     float bubbleFirstDrag;
     bool hitOnce;
@@ -13,6 +15,7 @@ public class BubbleActivator : MonoBehaviour {
     private void Start()
     {
         BubbleBehavior.hitSomething += Lose;
+        bubbleAnimator = GetComponentInParent<Animator>();
         image = GetComponent<SpriteRenderer>();
         rigid = GetComponentInParent<Rigidbody>();
         bubbleFirstDrag = rigid.drag;
@@ -30,15 +33,17 @@ public class BubbleActivator : MonoBehaviour {
         {
             hitOnce = false;
             rigid.drag = bubbleFirstDrag;
-            image.enabled = true;
+            //image.enabled = true;
+            
         }
     }
 
     public void HitBubble()
     {
-        Debug.Log("hit");
+        
         if (hitOnce) return;
-        image.enabled = false;
+        bubbleAnimator.SetTrigger(POP);
+        //image.enabled = false;
         rigid.velocity = new Vector3(0, -15, 0);
         rigid.drag = 0;
         hitOnce = true;

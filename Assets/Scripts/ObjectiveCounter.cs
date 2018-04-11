@@ -6,18 +6,16 @@ using UnityEngine.UI;
 public class ObjectiveCounter : MonoBehaviour {
 
 
-    public Text score;
-    Slider counter;
+    Text score;
 
     int maxObjectiveBubbles;
 
     private void Start()
     {
-        counter = GetComponent<Slider>();
+        score = GetComponent<Text>();
         maxObjectiveBubbles = LevelManager.objectiveBubbles;
     }
     void Update () {
         score.text = (maxObjectiveBubbles-LevelManager.objectiveBubbles).ToString() + "/" + maxObjectiveBubbles.ToString();
-        counter.value = (float)LevelManager.objectiveBubbles / (float)maxObjectiveBubbles * 100;
 	}
 }

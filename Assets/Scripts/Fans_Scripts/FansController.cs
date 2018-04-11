@@ -10,12 +10,19 @@ public class FansController : MonoBehaviour
     public Rigidbody bubbleRigid;
     protected BlowEffectArea effectCollider;
     protected FanControllerInEditor fanControllerInEditor;
+    protected ParticleSystem windParticleEffect;
+    protected Animator fanAnimatorController;
+
+    int START_ANIM = Animator.StringToHash("activated");
 
     protected bool windIsActivate;
+    bool playOnce;
     public virtual void Start()
     {
         effectCollider = GetComponentInChildren<BlowEffectArea>();
         fanControllerInEditor = GetComponent<FanControllerInEditor>();
+        windParticleEffect = GetComponentInChildren<ParticleSystem>();
+        fanAnimatorController = GetComponent<Animator>();
     }
 
     public virtual void FixedUpdate()
@@ -43,13 +50,23 @@ public class FansController : MonoBehaviour
     public virtual void ActivateWindFeedback()
     {
         windIsActivate = true;
-        effectCollider.GetComponent<MeshRenderer>().material.color = new Color32(0, 234, 244, 25);
+        if (!playOnce)
+        {
+            windParticleEffect.Play();
+            playOnce = true;
+        }
+            
+        fanAnimatorController.SetBool(START_ANIM, true);
+        //effectCollider.GetComponent<MeshRenderer>().material.color = new Color32(0, 234, 244, 25);
     }
 
     public virtual void DeactivateWindFeedback()
     {
         windIsActivate = false;
-        effectCollider.GetComponent<MeshRenderer>().material.color = new Color32(255, 255, 255, 0);
+        if (windParticleEffect.isPlaying) windParticleEffect.Stop();
+        playOnce = false;
+        fanAnimatorController.SetBool(START_ANIM, false);
+        //effectCollider.GetComponent<MeshRenderer>().material.color = new Color32(255, 255, 255, 0);
     }
 }
 
