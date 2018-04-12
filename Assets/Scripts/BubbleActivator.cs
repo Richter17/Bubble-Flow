@@ -33,8 +33,9 @@ public class BubbleActivator : MonoBehaviour {
         {
             hitOnce = false;
             rigid.drag = bubbleFirstDrag;
+            bubbleAnimator.SetTrigger(POP);
             //image.enabled = true;
-            
+
         }
     }
 

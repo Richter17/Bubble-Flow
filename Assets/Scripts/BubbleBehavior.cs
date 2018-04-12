@@ -60,7 +60,7 @@ public class BubbleBehavior : MonoBehaviour {
             //transform.position = startPos;
             //rigid.velocity = Vector3.zero;
             //bubbleAnimator.Play("Idle");
-            Time.timeScale = 0;
+            StartCoroutine(WaitForBubbleAnimationBeforeStop());
         }
         else
         {
@@ -68,6 +68,11 @@ public class BubbleBehavior : MonoBehaviour {
         }
     }
 
+    IEnumerator WaitForBubbleAnimationBeforeStop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 0;
+    }
 
 
     private void OnCollisionEnter(Collision coll)
