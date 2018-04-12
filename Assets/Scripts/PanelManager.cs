@@ -23,7 +23,9 @@ public class PanelManager : MonoBehaviour {
         {
             //show lose panel return t0 start
             Debug.Log("you lose");
-            StartCoroutine(ShowPanelAndHideIt(losePanel));
+            //Time.timeScale = 0;
+            losePanel.SetActive(true);
+            //StartCoroutine(ShowPanelAndHideIt(losePanel));
         }
     }
 
@@ -34,10 +36,11 @@ public class PanelManager : MonoBehaviour {
 
     }
 
-    IEnumerator ShowPanelAndHideIt(GameObject panel)
-    {
-        panel.SetActive(true);
-        yield return new WaitForSeconds(1);
-        panel.SetActive(false);
-    }
+    //IEnumerator ShowPanelAndHideIt(GameObject panel)
+    //{
+    //    panel.SetActive(true);
+    //    Time.timeScale = 0;
+    //    yield return new WaitForSeconds(1);
+        
+    //}
 }

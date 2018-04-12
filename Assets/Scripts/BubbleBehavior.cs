@@ -56,10 +56,11 @@ public class BubbleBehavior : MonoBehaviour {
     void LoseAndReturnToStart(bool lost)
     {
         if(!lost)
-        {            
-            transform.position = startPos;
-            rigid.velocity = Vector3.zero;
-            bubbleAnimator.Play("Idle");
+        {
+            //transform.position = startPos;
+            //rigid.velocity = Vector3.zero;
+            //bubbleAnimator.Play("Idle");
+            Time.timeScale = 0;
         }
         else
         {

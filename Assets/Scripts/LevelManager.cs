@@ -87,6 +87,8 @@ public class LevelManager : MonoBehaviour {
 
     public void RestartLevel()
     {
+        Time.timeScale = 1;
+        objectiveBubbles = 0;
         CheckIfPaused();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
