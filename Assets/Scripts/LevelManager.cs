@@ -89,7 +89,7 @@ public class LevelManager : MonoBehaviour {
     {
         Time.timeScale = 1;
         objectiveBubbles = 0;
-        CheckIfPaused();
+        //CheckIfPaused();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
     }
 

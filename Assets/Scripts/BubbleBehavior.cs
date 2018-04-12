@@ -72,25 +72,47 @@ public class BubbleBehavior : MonoBehaviour {
 
     private void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Win"))
+        //if (coll.gameObject.CompareTag("Win"))
+        //{
+        //    if (hitSomething != null)
+        //    {
+        //        hitSomething(true);
+        //    }
+        //}
+        //else
+        //{
+            if (hitSomething != null)
+            {
+                hitSomething(false);
+            }
+            //Debug.Log("Pop! you lose");
+        //}
+        
+        //LevelManager.manager.Lose();
+        //transform.position = startPos;
+        //rigid.velocity = Vector3.zero;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Win"))
         {
             if (hitSomething != null)
             {
                 hitSomething(true);
             }
         }
-        else
+        if(other.gameObject.name == "ShutDownBubbleCollder")
         {
-            if (hitSomething != null)
+            SpriteRenderer[] sprite = GetComponentsInChildren<SpriteRenderer>();
+            for (int i = 0; i < sprite.Length; i++)
             {
-                hitSomething(false);
+                sprite[i].sortingOrder = -2;
+                sprite[i].sortingLayerID = 0;
             }
-            //Debug.Log("Pop! you lose");
+            
+            GetComponent<SphereCollider>().enabled = false;
         }
-        
-        //LevelManager.manager.Lose();
-        //transform.position = startPos;
-        //rigid.velocity = Vector3.zero;
     }
-    
+
 }
