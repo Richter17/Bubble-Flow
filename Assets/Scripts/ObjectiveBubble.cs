@@ -7,6 +7,7 @@ public class ObjectiveBubble : ColliderObject {
     float squareLength = 1.5f;
     float movingSpeed = 0.01f;
 
+
     Vector3 startPos;
     Vector3 move = Vector3.zero;
     bool waitForFirstMove = false;
@@ -37,10 +38,10 @@ public class ObjectiveBubble : ColliderObject {
 
     public override void OnTriggerEnter(Collider other)
     {
+        
         //base.OnTriggerEnter(other);
-        if(canBeObtained)
+        if (canBeObtained)
         {
-            
             LevelManager.objectiveBubbles--;
             Debug.Log(LevelManager.objectiveBubbles + " bubbles left");
             Destroy(gameObject);
