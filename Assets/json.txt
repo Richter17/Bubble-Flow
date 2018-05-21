@@ -1,0 +1,1 @@
+{"LevelInfo":[{"Enemies":7,"Name":"Level Rookie"},{"Enemies":10,"Name":"Beginner Level"},{"Enemies":100,"Name":"Badass Level"}],"Audio":false,"GameTexts":{"Title":"Resistance is futile!","Body":"Persistance is futile!"}}
